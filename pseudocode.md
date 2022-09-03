@@ -1,0 +1,69 @@
+/*  Simple game of Rock Paper and Scissors 
+
+#Description
+A player must choose between rock, paper and scissors. 
+The computer randomly choose between rock, paper and scissors.
+Rock beats scissors,
+Paper beats rock,
+Scissors beats paper
+
+Input = player choice ======> output =  win, lose or tie
+
+#Pseudocode
+
+function playerChoice()
+    playerChoice = ask playerChoice (string)
+    if playerChoice empty, or not rock, paper or scissors
+        ask again
+    else
+        return playerChoice
+
+function computerChoice()
+    generate random number between 1 and 3
+    if
+        number is 1, computerChoice is rock
+        number is 2, computerChoice is paper
+        number is 3, computerChoice is scissors
+    return computerChoice
+
+function playRound(playerChoice, computerChoice)
+    if
+        playerChoice is rock and computerChoice is scissors
+            return (win)
+        playerChoice is paper and computerChoice is rock
+            return (win)
+        playerChoice is scissors and computerChoice is paper
+            return (win)
+        playerChoice is the same as computerChoice
+            return (tie)
+        else
+            return (lose)
+
+function game()
+    round = 0
+    playerScore
+    computerScore
+    numberOfRounds = number of rounds
+
+    while round is < to number of rounds
+        playerChoice = playerChoice()
+        computerChoice = computerChoice()
+        playRound(playerChoice, computerChoice)
+        if result is win
+            playerScore + 1
+            print computerChoice, playerChoice and win statement
+        if result is lose
+            computerScore + 1
+            print computerChoice, playerChoice and lose statement
+        if result is tie
+            print computerChoice, playerChoice and tie statement
+        increments round
+    
+    if computerScore > playerScore
+        print computer wins
+    if playerScore > computerScore
+        print player wins
+    if playerScore = computerScore
+        print tie
+
+    */
