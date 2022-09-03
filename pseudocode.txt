@@ -7,12 +7,15 @@ Rock beats scissors,
 Paper beats rock,
 Scissors beats paper
 
-Input = player choice ======> output =  win, lose or tie
+INPUT = player choice 
+======> 
+OUTPUT =  win, lose or tie
 
 #Pseudocode
 
 function playerChoice()
     playerChoice = ask playerChoice (string)
+    make playerChoice lowercase
     if playerChoice empty, or not rock, paper or scissors
         ask again
     else
