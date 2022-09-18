@@ -1,8 +1,8 @@
 function playerChoice()
 {
     let player = prompt("Choose between Rock, Paper or Scissors : ");
-    while (player == null  || player.length <= 0 || 
-        (player.toLowerCase() != "rock" && player.toLowerCase() != "paper" && player.toLowerCase() != "scissors"))
+    while (player == null  || player.length <= 0 
+        || (player.toLowerCase() != "rock" && player.toLowerCase() != "paper" && player.toLowerCase() != "scissors"))
         player = prompt("Answer empty or incorrect, enter again (rock, paper, scissors) : ");
 
     return (player.toLowerCase());
@@ -11,7 +11,7 @@ function playerChoice()
 function computerChoice()
 {
     let arrChoices = ["rock", "paper", "scissors"];
-    return (arrChoices[Math.floor(Math.random() * 3)]);
+    return (arrChoices[Math.floor(Math.random() * 3)]); //random number between 0 and 2
 }
 
 function playRound(player, computer)
