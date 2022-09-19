@@ -2,9 +2,33 @@ let round = 0;
 let result = 0;
 let playerScore = 0;
 let computerScore = 0;
-let choiceImg;
 let resetButton;
+let choiceImg;
 let fightResultsUI = document.querySelector("#fight-results");
+
+choiceImg = document.querySelectorAll("img");
+choiceImg.forEach( (e) => e.addEventListener("click", game));
+resetButton = document.querySelector("#reset");
+resetButton.addEventListener("click", reset);
+
+function updateUI()
+{  
+    document.querySelector(".player-score").lastElementChild.textContent =  playerScore;
+    document.querySelector(".computer-score").lastElementChild.textContent = computerScore;
+    document.querySelector(".rounds").lastElementChild.textContent = round;
+}
+
+function reset()
+{
+    choiceImg.forEach( (e) => e.removeEventListener("click", game));
+    choiceImg.forEach( (e) => e.addEventListener("click", game));
+    fightResultsUI.textContent = "FIGHT!";
+    round = 0;
+    result = 0;
+    computerScore = 0;
+    playerScore = 0;
+    updateUI();
+}
 
 function computerChoice()
 {
@@ -52,12 +76,9 @@ function game(event)
             fightResultsUI.textContent = "TIE!";
     }
 
-    round++; 
+    round++;
+    updateUI();
     console.log(`Player : ${playerScore} : CPU : ${computerScore}`);
-
-    document.querySelector(".player-score").lastElementChild.textContent =  playerScore;
-    document.querySelector(".computer-score").lastElementChild.textContent = computerScore;
-    document.querySelector(".rounds").lastElementChild.textContent = round;
 
     if (round == 5)
     {
@@ -68,7 +89,3 @@ function game(event)
         if (computerScore == playerScore) { fightResultsUI.textContent = "MATCH IS TIE";}
     }
 }
-
-
-choiceImg = document.querySelectorAll("img");
-choiceImg.forEach( (e) => e.addEventListener("click", game));
