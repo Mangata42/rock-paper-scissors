@@ -1,13 +1,3 @@
-function playerChoice()
-{
-    let player = prompt("Choose between Rock, Paper or Scissors : ");
-    while (player == null  || player.length <= 0 
-        || (player.toLowerCase() != "rock" && player.toLowerCase() != "paper" && player.toLowerCase() != "scissors"))
-        player = prompt("Answer empty or incorrect, enter again (rock, paper, scissors) : ");
-
-    return (player.toLowerCase());
-}
-
 function computerChoice()
 {
     let arrChoices = ["rock", "paper", "scissors"];
@@ -36,8 +26,12 @@ function game()
     let computerScore = 0;
     let player_choice = "";
     let computer_choice = "";
+    let imgChoice;
 
-    while (round < 5)
+    imgChoice = document.querySelectorAll(img);
+    imgChoice.forEach( (el) => {el.addEventListener("click", playerChoice)})
+
+    while (round < 5) 
     {
         player_choice = playerChoice();
         computer_choice = computerChoice();
@@ -63,5 +57,3 @@ function game()
     if (computerScore < playerScore) { console.log("PLAYER WINS") };
     if (computerScore == playerScore) { console.log("TIE")} ;
 }
-
-game();

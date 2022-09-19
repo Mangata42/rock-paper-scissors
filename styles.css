@@ -41,6 +41,11 @@ img{
     width: 300px;
 }
 
+#fightResults{
+    text-align: center;
+    margin-top: 20px;
+}
+
 .display{
     display: flex;
     justify-content: space-around;
