@@ -41,7 +41,7 @@ img{
     width: 300px;
 }
 
-#fightResults{
+#fight-results{
     text-align: center;
     margin-top: 20px;
 }
@@ -55,7 +55,7 @@ img{
     width: 700px;
     margin: 50px auto;
     background-color: #CC8B2E ;
-    border-radius: 100px;
+    border-radius: 20px;
 }
 
 .footer{
